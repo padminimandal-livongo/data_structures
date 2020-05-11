@@ -26,9 +26,32 @@ public class SinglyLinkedListDemo<T> {
         root = newNode;
     }
 
+    /**
+     * Find first occurrence of the value in the list
+     * @param value - Value to search
+     * @return Found node
+     */
+    public SinglyLinkedListNode<T> findFirstOccurrence(T value) {
+
+        // Root does not exist
+        if(root == null) {
+            return null;
+        }
+
+        // Root exists
+        SinglyLinkedListNode currentNode = root;
+        while(currentNode != null) {
+            if(currentNode.getValue() == value) {
+                return currentNode;
+            }
+            currentNode = currentNode.getNextNode();
+        }
+
+        return null;
+    }
+
     public SinglyLinkedListNode<T> getRoot() {
         return root;
     }
-
 
 }
