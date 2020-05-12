@@ -1,6 +1,6 @@
-package cs.fundamental.data.structure;
+package cs.fundamental.datastructures;
 
-import cs.fundamental.data.node.SinglyLinkedListNode;
+import cs.fundamental.node.SinglyLinkedListNode;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -63,7 +63,7 @@ class SinglyLinkedListDemoTest {
 
         SinglyLinkedListNode<String> result = singlyLinkedListDemo.removeNode("Maryland");
 
-        assertNull(result.getValue());
+        assertNull(result);
     }
 
     @Test

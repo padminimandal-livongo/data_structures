@@ -1,7 +1,12 @@
-package cs.fundamental.data.structure;
+package cs.fundamental.datastructures;
 
-import cs.fundamental.data.node.SinglyLinkedListNode;
+import cs.fundamental.node.SinglyLinkedListNode;
 
+/**
+ * All about Singly List Data Structure
+ * @author Padmini
+ * @param <T>
+ */
 public class SinglyLinkedListDemo<T> {
 
     // root
@@ -11,7 +16,7 @@ public class SinglyLinkedListDemo<T> {
      * Method to add nodes to the root
      * @param value Data to create node
      */
-    public void addNode(T value) {
+    public SinglyLinkedListNode<T> addNode(T value) {
 
         // New node with value
         SinglyLinkedListNode<T> newNode = new SinglyLinkedListNode(value);
@@ -19,12 +24,31 @@ public class SinglyLinkedListDemo<T> {
         // If root does not exist
         if(root == null) {
             root = newNode;
-            return;
+            return root;
         }
 
         // If root exists
         newNode.setNextNode(root);
         root = newNode;
+        return root;
+    }
+
+    /**
+     * Do Not Use - This is for creating a loop in the Singly linked list
+     * @param node
+     */
+    public void dontUseAddNodeAtLast(SinglyLinkedListNode<T> node) {
+
+        if(root == null) {
+            root = node;
+        }
+
+        SinglyLinkedListNode<T> current = root;
+        while(current.getNextNode() != null) {
+            current = current.getNextNode();
+        }
+
+        current.setNextNode(node);
     }
 
     /**
