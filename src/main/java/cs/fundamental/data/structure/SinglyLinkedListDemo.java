@@ -19,6 +19,7 @@ public class SinglyLinkedListDemo<T> {
         // If root does not exist
         if(root == null) {
             root = newNode;
+            return;
         }
 
         // If root exists
@@ -52,6 +53,43 @@ public class SinglyLinkedListDemo<T> {
 
     public SinglyLinkedListNode<T> getRoot() {
         return root;
+    }
+
+
+    /**
+     * Remove or Delete node from Singly linked list
+     * @param value - Value to delete
+     * @return Object that is deleted or removed
+     */
+    public SinglyLinkedListNode<T> removeNode(T value) {
+
+        // If root does not exist
+        if(root == null) {
+            return null;
+        }
+
+        // If root exist and root itself is the node to be removed
+        if(root.getValue() == value) {
+            SinglyLinkedListNode<T> temp = root;
+            root = temp.getNextNode();
+            return temp;
+        }
+
+        // If root exist
+        SinglyLinkedListNode<T> currentNode = root;
+        // Reference to previous node
+        SinglyLinkedListNode<T> prevNode = root;
+        while(currentNode != null) {
+            if(currentNode.getValue() == value) {
+                // Found the node perform delete operation
+                prevNode.setNextNode(currentNode.getNextNode());
+                return currentNode;
+            }
+            // Set previous and next node
+            prevNode = currentNode;
+            currentNode = currentNode.getNextNode();
+        }
+        return null;
     }
 
 }

@@ -10,7 +10,7 @@ public class SinglyLinkedListNode<T> {
     private T value;
 
     // Next node reference
-    private SinglyLinkedListNode<T> nextNode;
+    private SinglyLinkedListNode<T> nextNode = null;
 
     /**
      * Constructor
