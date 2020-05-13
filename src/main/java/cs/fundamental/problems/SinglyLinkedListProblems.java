@@ -2,9 +2,17 @@ package cs.fundamental.problems;
 
 import cs.fundamental.node.SinglyLinkedListNode;
 
+import java.util.HashSet;
+
 public class SinglyLinkedListProblems<T>{
 
-    public boolean findLoopExits(SinglyLinkedListNode<T> root) {
+    /**
+     * Detect/ Find if loop exists in Singly Linked List using Hare and Tortoise Algorithm
+     * This is also known as Floyd’s Cycle-Finding Algorithm
+     * @param root - Root of the Singly Linked List
+     * @return Boolean if loop detected or not
+     */
+    public boolean findLoopExitsUsingHareAndTortoiseMethod(SinglyLinkedListNode<T> root) {
         if(root != null && root.getNextNode() != null
                 && root.getNextNode().getNextNode() != null) {
             SinglyLinkedListNode<T> tortoise = root;
@@ -21,6 +29,20 @@ public class SinglyLinkedListProblems<T>{
             }
         }
 
+        return false;
+    }
+
+    public boolean findLoopExistsUsingHashingMethod(SinglyLinkedListNode<T> root) {
+
+        HashSet<T> hashSet = new HashSet<>();
+
+        while(root != null) {
+            if(hashSet.contains(root.getValue())) {
+                return true;
+            }
+            hashSet.add(root.getValue());
+            root = root.getNextNode();
+        }
         return false;
     }
 }

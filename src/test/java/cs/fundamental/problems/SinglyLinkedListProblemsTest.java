@@ -21,7 +21,27 @@ class SinglyLinkedListProblemsTest {
         singlyLinkedListDemo.dontUseAddNodeAtLast(elementToLoop);
 
         SinglyLinkedListProblems<Integer> singlyLinkedListProblems = new SinglyLinkedListProblems<Integer>();
-        boolean result = singlyLinkedListProblems.findLoopExits(singlyLinkedListDemo.getRoot());
+        boolean result = singlyLinkedListProblems.findLoopExitsUsingHareAndTortoiseMethod(singlyLinkedListDemo.getRoot());
+        Assertions.assertTrue(result);
+    }
+
+    @Test
+    void findLoopExits2() {
+        Integer[] data = new Integer[]{2, 0, 6, 3, 1, 6, 6, 3, 1, 6, 6, 3, 1, 6};
+        SinglyLinkedListDemo<Integer> singlyLinkedListDemo = new SinglyLinkedListDemo<>();
+        SinglyLinkedListNode<Integer> elementToLoop = null;
+        for(int i = 0 ; i < data.length; i++) {
+            if(i == 3) {
+                elementToLoop = singlyLinkedListDemo.addNode(data[i]);
+            } else {
+                singlyLinkedListDemo.addNode(data[i]);
+            }
+        }
+
+        //singlyLinkedListDemo.dontUseAddNodeAtLast(elementToLoop);
+
+        SinglyLinkedListProblems<Integer> singlyLinkedListProblems = new SinglyLinkedListProblems<Integer>();
+        boolean result = singlyLinkedListProblems.findLoopExitsUsingHareAndTortoiseMethod(singlyLinkedListDemo.getRoot());
         Assertions.assertTrue(result);
     }
 
@@ -33,12 +53,12 @@ class SinglyLinkedListProblemsTest {
             singlyLinkedListDemo.addNode(value);
         }
         SinglyLinkedListProblems<Integer> singlyLinkedListProblems = new SinglyLinkedListProblems<Integer>();
-        boolean result = singlyLinkedListProblems.findLoopExits(singlyLinkedListDemo.getRoot());
+        boolean result = singlyLinkedListProblems.findLoopExitsUsingHareAndTortoiseMethod(singlyLinkedListDemo.getRoot());
         Assertions.assertFalse(result);
     }
 
     @Test
-    void findLoopExitsPositive() {
+    void findLoopExitsNoLoop() {
         Integer[] data = new Integer[]{1, 2, 5, 8, 10, 20, 30, 40};
         SinglyLinkedListDemo<Integer> singlyLinkedListDemo = new SinglyLinkedListDemo<Integer>();
         for(Integer value: data) {
@@ -46,7 +66,25 @@ class SinglyLinkedListProblemsTest {
         }
 
         SinglyLinkedListProblems<Integer> singlyLinkedListProblems = new SinglyLinkedListProblems<Integer>();
-        boolean result = singlyLinkedListProblems.findLoopExits(singlyLinkedListDemo.getRoot());
+        boolean result = singlyLinkedListProblems.findLoopExitsUsingHareAndTortoiseMethod(singlyLinkedListDemo.getRoot());
         Assertions.assertFalse(result);
+    }
+
+    @Test
+    void findLoopExistsUsingHashingMethod() {
+        Integer[] data = new Integer[]{1, 2, 5, 8, 10, 20, 30, 40};
+        SinglyLinkedListDemo<Integer> singlyLinkedListDemo = new SinglyLinkedListDemo<>();
+        SinglyLinkedListNode<Integer> elementToLoop = null;
+        for(int i = 0 ; i < data.length; i++) {
+            if(i == 3) {
+                elementToLoop = singlyLinkedListDemo.addNode(data[i]);
+            }
+        }
+
+        singlyLinkedListDemo.dontUseAddNodeAtLast(elementToLoop);
+
+        SinglyLinkedListProblems<Integer> singlyLinkedListProblems = new SinglyLinkedListProblems<>();
+        boolean result = singlyLinkedListProblems.findLoopExistsUsingHashingMethod(singlyLinkedListDemo.getRoot());
+        Assertions.assertTrue(result);
     }
 }
