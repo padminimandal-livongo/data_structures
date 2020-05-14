@@ -1,4 +1,4 @@
-package cs.fundamental.sorting;
+package cs.fundamental.algorithms.sorting;
 
 /**
  * Interface which has common declarations

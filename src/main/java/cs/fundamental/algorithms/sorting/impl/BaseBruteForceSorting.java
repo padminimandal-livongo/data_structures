@@ -1,6 +1,6 @@
-package cs.fundamental.sorting.impl;
+package cs.fundamental.algorithms.sorting.impl;
 
-import cs.fundamental.sorting.Sort;
+import cs.fundamental.algorithms.sorting.Sort;
 
 import java.util.Arrays;
 

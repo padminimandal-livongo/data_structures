@@ -1,4 +1,4 @@
-package cs.fundamental.sorting.impl;
+package cs.fundamental.algorithms.sorting.impl;
 
 public class BubbleSort extends BaseBruteForceSorting {
 

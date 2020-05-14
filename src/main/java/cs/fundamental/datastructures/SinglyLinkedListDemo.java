@@ -53,7 +53,7 @@ public class SinglyLinkedListDemo<T> {
 
     /**
      * Find first occurrence of the value in the list
-     * @param value - Value to search
+     * @param value - Value to BinarySearch
      * @return Found node
      */
     public SinglyLinkedListNode<T> findFirstOccurrence(T value) {

@@ -1,4 +1,4 @@
-package cs.fundamental.sorting.impl;
+package cs.fundamental.algorithms.sorting.impl;
 
 import org.junit.jupiter.api.Test;
 
