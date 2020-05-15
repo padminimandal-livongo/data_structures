@@ -4,6 +4,12 @@ import cs.fundamental.node.SinglyLinkedListNode;
 
 import java.util.HashSet;
 
+/**
+ * 1. Find Loop using Hare and Tortoise method - findLoopExitsUsingHareAndTortoiseMethod
+ * 2. Find loop using HashSet method - findLoopExistsUsingHashingMethod
+ *
+ * @param <T>
+ */
 public class SinglyLinkedListProblems<T>{
 
     /**

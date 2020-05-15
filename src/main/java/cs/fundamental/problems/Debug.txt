@@ -1,0 +1,32 @@
+
+
+
+
+
+
+
+
+
+
+
+
+List 1 - 10->20         |
+list2  = 5->10->20      |
+node = 5                | 10
+tempList1= 10           | 10
+node = true             | true
+
+tempList2NextNode = 10  | 20
+
+false                   | true              | true
+                        |                   |
+                        |                   |
+                        |                   |
+                        | tempList1 = 20    | null
+                        | node = 20         | null
+                        |                   |
+false                   | false             | true
+
+
+node = 10               |
+tempList1 = 10          |
