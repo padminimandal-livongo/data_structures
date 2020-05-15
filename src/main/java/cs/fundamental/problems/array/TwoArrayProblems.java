@@ -3,7 +3,8 @@ package cs.fundamental.problems.array;
 import java.util.Arrays;
 
 /**
- * 1. Recursive function to do substring search - containsString
+ * 1. Search word exists in a char array
+ * 2. Recursive function to do substring search - containsString [https://www.geeksforgeeks.org/recursive-function-to-do-substring-search/]
  */
 public class TwoArrayProblems {
 
@@ -22,26 +23,26 @@ public class TwoArrayProblems {
     }
 
     /**
-     * Given a text text[] and a pattern pat[],
-     * write a function “contains(char pat[], char txt[])” that returns true if pat[] is present in txt[],
+     * Given a text text[] and a text findText[],
+     * write a function “contains(char findText[], char txt[])” that returns true if findText[] is present in txt[],
      * otherwise false.
      * @param text - Text Array
-     * @param pattern - Pattern Array
+     * @param findText - findText Array
      * @return boolean
      */
-    public boolean containsString(char[] text, char[] pattern) {
+    public boolean containsString(char[] text, char[] findText) {
         // If both the arrays are null return they match
-        if(text == null && pattern == null) {
+        if(text == null && findText == null) {
             return true;
         }
 
         // If either of the array is null return false
-        if(text == null || pattern == null) {
+        if(text == null || findText == null) {
             return false;
         }
 
         // If pattern array is greater than text return false
-        if(pattern.length > text.length) {
+        if(findText.length > text.length) {
             return false;
         }
 
@@ -49,7 +50,7 @@ public class TwoArrayProblems {
         for(int j = 0; j < text.length; j++) {
             // For all space separate check
             if(text[j] == ' ') {
-                if(isEqualArray(Arrays.copyOfRange(text, startPos, j), pattern)) {
+                if(isEqualArray(Arrays.copyOfRange(text, startPos, j), findText)) {
                     return true;
                 }
                 startPos = j + 1; // We don't want space
@@ -57,7 +58,7 @@ public class TwoArrayProblems {
             // If we are at the last word in the array there will not be space
             // Edge case to handle last word
             if(j == text.length - 1) {
-                return isEqualArray(Arrays.copyOfRange(text, startPos, j + 1), pattern);
+                return isEqualArray(Arrays.copyOfRange(text, startPos, j + 1), findText);
             }
         }
         return false;
