@@ -22,7 +22,7 @@ class TwoSumTest {
         int target = 5;
 
         TwoSum twoSum = new TwoSum();
-        int[] result = twoSum.bruteForceMethod(nums, target);
+        int[] result = twoSum.bruteForce(nums, target);
 
         assertArrayEquals(new int[2], result);
     }
@@ -33,7 +33,7 @@ class TwoSumTest {
         int target = 1;
 
         TwoSum twoSum = new TwoSum();
-        int[] result = twoSum.bruteForceMethod(nums, target);
+        int[] result = twoSum.bruteForce(nums, target);
 
         assertArrayEquals(new int[2], result);
     }
@@ -44,7 +44,7 @@ class TwoSumTest {
         int target = 9;
 
         TwoSum twoSum = new TwoSum();
-        int[] result = twoSum.bruteForceMethod(nums, target);
+        int[] result = twoSum.bruteForce(nums, target);
 
         int[] expected = {0,1};
         assertArrayEquals(expected, result);
@@ -56,7 +56,7 @@ class TwoSumTest {
         int target = 1;
 
         TwoSum twoSum = new TwoSum();
-        int[] result = twoSum.bruteForceMethod(nums, target);
+        int[] result = twoSum.bruteForce(nums, target);
 
         int[] expected = {0,1};
         assertArrayEquals(expected, result);
@@ -68,7 +68,7 @@ class TwoSumTest {
         int target = 11;
 
         TwoSum twoSum = new TwoSum();
-        int[] result = twoSum.bruteForceMethod(nums, target);
+        int[] result = twoSum.bruteForce(nums, target);
 
         int[] expected = {2, 3};
         assertArrayEquals(expected, result);
@@ -80,7 +80,7 @@ class TwoSumTest {
         int target = 6;
 
         TwoSum twoSum = new TwoSum();
-        int[] result = twoSum.bruteForceMethod(nums, target);
+        int[] result = twoSum.bruteForce(nums, target);
 
         assertArrayEquals(new int[2], result);
     }
@@ -91,7 +91,7 @@ class TwoSumTest {
         int target = 6;
 
         TwoSum twoSum = new TwoSum();
-        int[] result = twoSum.bruteForceMethod(nums, target);
+        int[] result = twoSum.bruteForce(nums, target);
 
         int[] expected = {0, 1};
 

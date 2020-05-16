@@ -27,7 +27,7 @@ import java.util.Map;
  */
 public class TwoSum {
 
-    public int[] bruteForceMethod(int[] nums, int target) {
+    public int[] bruteForce(int[] nums, int target) {
 
         if(nums == null || nums.length <= 1) {
             return new int[2];
