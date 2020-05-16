@@ -31,17 +31,14 @@ public class TwoArrayProblems {
      * @return boolean
      */
     public boolean containsString(char[] text, char[] findText) {
-        // If both the arrays are null return they match
         if(text == null && findText == null) {
             return true;
         }
 
-        // If either of the array is null return false
         if(text == null || findText == null) {
             return false;
         }
 
-        // If pattern array is greater than text return false
         if(findText.length > text.length) {
             return false;
         }
