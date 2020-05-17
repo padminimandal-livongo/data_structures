@@ -2,7 +2,7 @@ package cs.fundamental.problems.leetcode.arraysandstrings;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 /**
  * Test Cases:
@@ -46,7 +46,7 @@ class TwoSumTest {
         TwoSum twoSum = new TwoSum();
         int[] result = twoSum.bruteForce(nums, target);
 
-        int[] expected = {0,1};
+        int[] expected = {0, 1};
         assertArrayEquals(expected, result);
     }
 
@@ -58,7 +58,7 @@ class TwoSumTest {
         TwoSum twoSum = new TwoSum();
         int[] result = twoSum.bruteForce(nums, target);
 
-        int[] expected = {0,1};
+        int[] expected = {0, 1};
         assertArrayEquals(expected, result);
     }
 
@@ -128,7 +128,7 @@ class TwoSumTest {
         TwoSum twoSum = new TwoSum();
         int[] result = twoSum.twoSumWithMapStorage(nums, target);
 
-        int[] expected = {0,1};
+        int[] expected = {0, 1};
         assertArrayEquals(expected, result);
     }
 
@@ -140,7 +140,7 @@ class TwoSumTest {
         TwoSum twoSum = new TwoSum();
         int[] result = twoSum.twoSumWithMapStorage(nums, target);
 
-        int[] expected = {0,1};
+        int[] expected = {0, 1};
         assertArrayEquals(expected, result);
     }
 

@@ -18,8 +18,8 @@ public class BaseBruteForceSorting implements Sort {
     @Override
     public void display() {
         System.out.print("[ ");
-        for(int data: elements) {
-            System.out.print(data+ " ");
+        for (int data : elements) {
+            System.out.print(data + " ");
         }
         System.out.println("]");
     }

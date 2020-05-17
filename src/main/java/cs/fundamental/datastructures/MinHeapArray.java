@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * Min Heap using Array implementation
- *
+ * <p>
  * Notes:
  * 1. (size) always points to next insert location
  * 2. (size - 1) always points to last inserted record. Keep in mind working with last inserted record is (size - 1)
@@ -24,29 +24,30 @@ public class MinHeapArray {
 
     /**
      * Added for testing and understanding purpose
+     *
      * @return
      */
     public int[] getData() {
         return elements;
     }
 
-    public int peek() throws IllegalStateException{
-        if(size == 0) {
+    public int peek() throws IllegalStateException {
+        if (size == 0) {
             throw new IllegalStateException("Heap is empty!");
         }
 
         return elements[0];
     }
 
-    public int poll() throws IllegalStateException{
-        if(size == 0) {
+    public int poll() throws IllegalStateException {
+        if (size == 0) {
             throw new IllegalStateException("Heap is empty!");
         }
 
         int temp = elements[0];
 
         elements[0] = elements[size - 1];
-        size --;
+        size--;
 
         heapifyDown();
 
@@ -56,14 +57,14 @@ public class MinHeapArray {
     public void heapifyDown() {
         int index = 0;
 
-        while(hasLeftChild(index)) {
+        while (hasLeftChild(index)) {
             int smallerChildIndex = getLeftChildIndex(index);
 
-            if(hasRightChild(index) && getRightChild(index) < getLeftChild(index)) {
+            if (hasRightChild(index) && getRightChild(index) < getLeftChild(index)) {
                 smallerChildIndex = getRightChildIndex(index);
             }
 
-            if(elements[index] > elements[smallerChildIndex]) {
+            if (elements[index] > elements[smallerChildIndex]) {
                 swap(index, smallerChildIndex);
             } else {
                 break;
@@ -72,6 +73,7 @@ public class MinHeapArray {
             index = smallerChildIndex;
         }
     }
+
     public void push(int element) {
         checkCapacity();
 
@@ -85,7 +87,7 @@ public class MinHeapArray {
 
         int index = size - 1;
 
-        while(hasParent(index) && getParent(index) > elements[index]) {
+        while (hasParent(index) && getParent(index) > elements[index]) {
             swap(index, getParentIndex(index));
             index = getParentIndex(index);
         }
@@ -128,14 +130,14 @@ public class MinHeapArray {
         return elements[getParentIndex(index)];
     }
 
-    private void swap(int index1, int index2){
+    private void swap(int index1, int index2) {
         int temp = elements[index1];
         elements[index1] = elements[index2];
         elements[index2] = temp;
     }
 
     private void checkCapacity() {
-        if(size == capacity) {
+        if (size == capacity) {
             elements = Arrays.copyOf(elements, capacity * 2);
             capacity = capacity * 2;
         }

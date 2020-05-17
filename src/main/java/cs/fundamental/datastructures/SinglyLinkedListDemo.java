@@ -4,8 +4,9 @@ import cs.fundamental.node.SinglyLinkedListNode;
 
 /**
  * All about Singly List Data Structure
- * @author Padmini
+ *
  * @param <T>
+ * @author Padmini
  */
 public class SinglyLinkedListDemo<T> {
 
@@ -14,6 +15,7 @@ public class SinglyLinkedListDemo<T> {
 
     /**
      * Method to add nodes to the root
+     *
      * @param value Data to create node
      */
     public SinglyLinkedListNode<T> addNode(T value) {
@@ -22,7 +24,7 @@ public class SinglyLinkedListDemo<T> {
         SinglyLinkedListNode<T> newNode = new SinglyLinkedListNode(value);
 
         // If root does not exist
-        if(root == null) {
+        if (root == null) {
             root = newNode;
             return root;
         }
@@ -35,16 +37,17 @@ public class SinglyLinkedListDemo<T> {
 
     /**
      * Do Not Use - This is for creating a loop in the Singly linked list
+     *
      * @param node
      */
     public void dontUseAddNodeAtLast(SinglyLinkedListNode<T> node) {
 
-        if(root == null) {
+        if (root == null) {
             root = node;
         }
 
         SinglyLinkedListNode<T> current = root;
-        while(current.getNextNode() != null) {
+        while (current.getNextNode() != null) {
             current = current.getNextNode();
         }
 
@@ -53,20 +56,21 @@ public class SinglyLinkedListDemo<T> {
 
     /**
      * Find first occurrence of the value in the list
+     *
      * @param value - Value to BinarySearch
      * @return Found node
      */
     public SinglyLinkedListNode<T> findFirstOccurrence(T value) {
 
         // Root does not exist
-        if(root == null) {
+        if (root == null) {
             return null;
         }
 
         // Root exists
         SinglyLinkedListNode currentNode = root;
-        while(currentNode != null) {
-            if(currentNode.getValue() == value) {
+        while (currentNode != null) {
+            if (currentNode.getValue() == value) {
                 return currentNode;
             }
             currentNode = currentNode.getNextNode();
@@ -82,18 +86,19 @@ public class SinglyLinkedListDemo<T> {
 
     /**
      * Remove or Delete node from Singly linked list
+     *
      * @param value - Value to delete
      * @return Object that is deleted or removed
      */
     public SinglyLinkedListNode<T> removeNode(T value) {
 
         // If root does not exist
-        if(root == null) {
+        if (root == null) {
             return null;
         }
 
         // If root exist and root itself is the node to be removed
-        if(root.getValue() == value) {
+        if (root.getValue() == value) {
             SinglyLinkedListNode<T> temp = root;
             root = temp.getNextNode();
             return temp;
@@ -103,8 +108,8 @@ public class SinglyLinkedListDemo<T> {
         SinglyLinkedListNode<T> currentNode = root;
         // Reference to previous node
         SinglyLinkedListNode<T> prevNode = root;
-        while(currentNode != null) {
-            if(currentNode.getValue() == value) {
+        while (currentNode != null) {
+            if (currentNode.getValue() == value) {
                 // Found the node perform delete operation
                 prevNode.setNextNode(currentNode.getNextNode());
                 return currentNode;

@@ -22,7 +22,7 @@ class MinHeapArrayTest {
 
     @Test
     @DisplayName("Push 1 element to heap")
-    void push(){
+    void push() {
         MinHeapArray minHeapArray = new MinHeapArray();
 
         assertDoesNotThrow(() -> {
@@ -32,7 +32,7 @@ class MinHeapArrayTest {
 
     @Test
     @DisplayName("Push random 20 elements to heap")
-    void pushRandom(){
+    void pushRandom() {
         MinHeapArray minHeapArray = new MinHeapArray();
 
         assertDoesNotThrow(() -> {
@@ -47,7 +47,7 @@ class MinHeapArrayTest {
     void peekPositive() {
         MinHeapArray minHeapArray = new MinHeapArray();
 
-        for(int i = 10; i > 0; i--) {
+        for (int i = 10; i > 0; i--) {
             minHeapArray.push(i);
         }
 
@@ -61,11 +61,11 @@ class MinHeapArrayTest {
         MinHeapArray minHeapArray = new MinHeapArray();
 
         // []
-        for(int i = 10; i > 0; i--) {
+        for (int i = 10; i > 0; i--) {
             minHeapArray.push(i);
         }
 
-        assertArrayEquals(new int[] {1,2,5,4,3,9,6,10,7,8}, minHeapArray.getData());
+        assertArrayEquals(new int[]{1, 2, 5, 4, 3, 9, 6, 10, 7, 8}, minHeapArray.getData());
         //int result = minHeapArray.peek()
     }
 }

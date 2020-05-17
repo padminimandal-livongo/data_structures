@@ -10,24 +10,25 @@ import java.util.HashSet;
  *
  * @param <T>
  */
-public class SinglyLinkedListProblems<T>{
+public class SinglyLinkedListProblems<T> {
 
     /**
      * Detect/ Find if loop exists in Singly Linked List using Hare and Tortoise Algorithm
      * This is also known as Floyd’s Cycle-Finding Algorithm
+     *
      * @param root - Root of the Singly Linked List
      * @return Boolean if loop detected or not
      */
     public boolean findLoopExitsUsingHareAndTortoiseMethod(SinglyLinkedListNode<T> root) {
-        if(root != null && root.getNextNode() != null
+        if (root != null && root.getNextNode() != null
                 && root.getNextNode().getNextNode() != null) {
             SinglyLinkedListNode<T> tortoise = root;
             SinglyLinkedListNode<T> hare = root.getNextNode().getNextNode();
 
-            while(hare != null && hare.getNextNode() != null
+            while (hare != null && hare.getNextNode() != null
                     && hare.getNextNode().getNextNode() != null
                     && tortoise != null) {
-                if(hare.getValue() == tortoise.getValue()) {
+                if (hare.getValue() == tortoise.getValue()) {
                     return true;
                 }
                 tortoise = tortoise.getNextNode();
@@ -42,8 +43,8 @@ public class SinglyLinkedListProblems<T>{
 
         HashSet<T> hashSet = new HashSet<>();
 
-        while(root != null) {
-            if(hashSet.contains(root.getValue())) {
+        while (root != null) {
+            if (hashSet.contains(root.getValue())) {
                 return true;
             }
             hashSet.add(root.getValue());

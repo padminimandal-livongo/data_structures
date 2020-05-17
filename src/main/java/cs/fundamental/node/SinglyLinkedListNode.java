@@ -2,6 +2,7 @@ package cs.fundamental.node;
 
 /**
  * Node for Singly Linked List
+ *
  * @param <T>
  */
 public class SinglyLinkedListNode<T> {
@@ -14,6 +15,7 @@ public class SinglyLinkedListNode<T> {
 
     /**
      * Constructor
+     *
      * @param value - Node value
      */
     public SinglyLinkedListNode(T value) {

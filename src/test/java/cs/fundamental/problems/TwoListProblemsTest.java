@@ -3,7 +3,8 @@ package cs.fundamental.problems;
 import cs.fundamental.datastructures.SinglyLinkedListDemo;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class TwoListProblemsTest {
 
@@ -32,7 +33,6 @@ class TwoListProblemsTest {
         singlyLinkedListDemo1.addNode(4);
 
 
-
         SinglyLinkedListDemo<Integer> singlyLinkedListDemo2 = new SinglyLinkedListDemo<>();
         singlyLinkedListDemo2.addNode(1);
         singlyLinkedListDemo2.addNode(2);
@@ -53,7 +53,6 @@ class TwoListProblemsTest {
         singlyLinkedListDemo1.addNode(2);
         singlyLinkedListDemo1.addNode(3);
         singlyLinkedListDemo1.addNode(4);
-
 
 
         SinglyLinkedListDemo<Integer> singlyLinkedListDemo2 = new SinglyLinkedListDemo<>();

@@ -5,6 +5,7 @@ public class BubbleSort extends BaseBruteForceSorting {
     public BubbleSort(int[] elements) {
         this.elements = elements;
     }
+
     /**
      * 1. Compare 2 elements together
      * 2. Swap elements
@@ -14,10 +15,10 @@ public class BubbleSort extends BaseBruteForceSorting {
     public int[] sort() {
         // We swap hence length - 2 so that we dont hit OutOfBound Exception
         int size = elements.length - 2;
-        for(int i = 0; i < elements.length - 2; i++) {
-            for(int j = 0; j <= size; j++ ) {
-                if(elements[j] > elements[j+1]) {
-                    swap(j, j+1);
+        for (int i = 0; i < elements.length - 2; i++) {
+            for (int j = 0; j <= size; j++) {
+                if (elements[j] > elements[j + 1]) {
+                    swap(j, j + 1);
                 }
             }
             // After each iteration extreme end will have the largest value

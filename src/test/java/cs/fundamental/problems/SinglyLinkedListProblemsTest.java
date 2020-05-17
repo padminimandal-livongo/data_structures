@@ -12,8 +12,8 @@ class SinglyLinkedListProblemsTest {
         Integer[] data = new Integer[]{1, 2, 5, 8, 10, 20, 30, 40, 8};
         SinglyLinkedListDemo<Integer> singlyLinkedListDemo = new SinglyLinkedListDemo<>();
         SinglyLinkedListNode<Integer> elementToLoop = null;
-        for(int i = 0 ; i < data.length; i++) {
-            if(i == 3) {
+        for (int i = 0; i < data.length; i++) {
+            if (i == 3) {
                 elementToLoop = singlyLinkedListDemo.addNode(data[i]);
             }
         }
@@ -30,8 +30,8 @@ class SinglyLinkedListProblemsTest {
         Integer[] data = new Integer[]{2, 0, 6, 3, 1, 6, 6, 3, 1, 6, 6, 3, 1, 6};
         SinglyLinkedListDemo<Integer> singlyLinkedListDemo = new SinglyLinkedListDemo<>();
         SinglyLinkedListNode<Integer> elementToLoop = null;
-        for(int i = 0 ; i < data.length; i++) {
-            if(i == 3) {
+        for (int i = 0; i < data.length; i++) {
+            if (i == 3) {
                 elementToLoop = singlyLinkedListDemo.addNode(data[i]);
             } else {
                 singlyLinkedListDemo.addNode(data[i]);
@@ -49,7 +49,7 @@ class SinglyLinkedListProblemsTest {
     void findLoopExitsEmptyList() {
         Integer[] data = new Integer[]{};
         SinglyLinkedListDemo<Integer> singlyLinkedListDemo = new SinglyLinkedListDemo<Integer>();
-        for(Integer value: data) {
+        for (Integer value : data) {
             singlyLinkedListDemo.addNode(value);
         }
         SinglyLinkedListProblems<Integer> singlyLinkedListProblems = new SinglyLinkedListProblems<Integer>();
@@ -61,7 +61,7 @@ class SinglyLinkedListProblemsTest {
     void findLoopExitsNoLoop() {
         Integer[] data = new Integer[]{1, 2, 5, 8, 10, 20, 30, 40};
         SinglyLinkedListDemo<Integer> singlyLinkedListDemo = new SinglyLinkedListDemo<Integer>();
-        for(Integer value: data) {
+        for (Integer value : data) {
             singlyLinkedListDemo.addNode(value);
         }
 
@@ -75,8 +75,8 @@ class SinglyLinkedListProblemsTest {
         Integer[] data = new Integer[]{1, 2, 5, 8, 10, 20, 30, 40};
         SinglyLinkedListDemo<Integer> singlyLinkedListDemo = new SinglyLinkedListDemo<>();
         SinglyLinkedListNode<Integer> elementToLoop = null;
-        for(int i = 0 ; i < data.length; i++) {
-            if(i == 3) {
+        for (int i = 0; i < data.length; i++) {
+            if (i == 3) {
                 elementToLoop = singlyLinkedListDemo.addNode(data[i]);
             }
         }

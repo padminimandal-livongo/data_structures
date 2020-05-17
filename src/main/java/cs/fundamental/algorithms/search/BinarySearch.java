@@ -10,18 +10,18 @@ public class BinarySearch {
 
     public boolean searchIteratively(int element, int[] elements) {
         // If array is empty return false
-        if(elements == null || elements.length == 0) {
+        if (elements == null || elements.length == 0) {
             return false;
         }
 
         int start = 0;
         int end = elements.length - 1;
 
-        while(start <= end) {
+        while (start <= end) {
             int median = (int) Math.ceil((start + end) / 2);
-            if(element > elements[median]) {
+            if (element > elements[median]) {
                 start = median + 1;
-            } else if(element < elements[median]) {
+            } else if (element < elements[median]) {
                 end = median - 1;
             } else {
                 return true;
@@ -33,7 +33,7 @@ public class BinarySearch {
     public boolean searchRecursively(int[] elements, int element) {
 
         // If array is empty return false
-        if(elements == null || elements.length == 0) {
+        if (elements == null || elements.length == 0) {
             return false;
         }
 
@@ -41,15 +41,15 @@ public class BinarySearch {
     }
 
     private boolean search(int[] elements, int element, int start, int end) {
-        if(start == end && elements[start] != element) {
+        if (start == end && elements[start] != element) {
             return false;
         }
 
         int median = (int) Math.ceil((start + end) / 2);
 
-        if(elements[median] == element) {
+        if (elements[median] == element) {
             return true;
-        } else if(element > elements[median]) {
+        } else if (element > elements[median]) {
             start = median + 1;
         } else {
             end = median - 1;

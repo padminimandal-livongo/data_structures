@@ -2,9 +2,11 @@ package cs.fundamental.datastructures;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.*;
+import java.util.List;
+import java.util.Random;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class BinaryTreeTest {
 
@@ -19,7 +21,7 @@ class BinaryTreeTest {
     void add2() {
         BinaryTree binaryTree = new BinaryTree();
 
-        for(int i = 0; i < 20; i++) {
+        for (int i = 0; i < 20; i++) {
             boolean result = binaryTree.add(new Random().nextInt());
             assertTrue(result);
         }
@@ -40,7 +42,7 @@ class BinaryTreeTest {
         binaryTree.add(33);
 
         List<Integer> result = binaryTree.inOrderTraversal();
-        Integer[] expected = {10,27, 30, 33, 34, 37, 50, 58, 79};
+        Integer[] expected = {10, 27, 30, 33, 34, 37, 50, 58, 79};
         assertArrayEquals(expected, result.toArray());
     }
 

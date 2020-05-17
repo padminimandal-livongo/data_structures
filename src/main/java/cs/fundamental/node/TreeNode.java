@@ -14,17 +14,18 @@ public class TreeNode {
     public TreeNode(int data) {
         this.data = data;
     }
+
     public boolean addNode(int element) {
 
-        if(element <= data) {
-            if(leftChild == null) {
+        if (element <= data) {
+            if (leftChild == null) {
                 leftChild = new TreeNode(element);
                 return true;
-            } else{
+            } else {
                 return leftChild.addNode(element);
             }
-        } else{
-            if(rightChild == null) {
+        } else {
+            if (rightChild == null) {
                 rightChild = new TreeNode(element);
                 return true;
             } else {

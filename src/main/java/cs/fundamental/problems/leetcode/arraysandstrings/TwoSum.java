@@ -5,18 +5,18 @@ import java.util.Map;
 
 /**
  * https://leetcode.com/explore/interview/card/amazon/76/array-and-strings/508/
- *
+ * <p>
  * Given an array of integers, return indices of the two numbers such that they add up to a specific target.
- *
+ * <p>
  * You may assume that each input would have exactly one solution, and you may not use the same element twice.
- *
+ * <p>
  * Example:
- *
+ * <p>
  * Given nums = [2, 7, 11, 15], target = 9,
- *
+ * <p>
  * Because nums[0] + nums[1] = 2 + 7 = 9,
  * return [0, 1].
- *
+ * <p>
  * Test Cases:
  * nums = [] and target = 5,  return [0, 0]
  * nums = [1] and target = 1,  return [0, 0]
@@ -29,13 +29,13 @@ public class TwoSum {
 
     public int[] bruteForce(int[] nums, int target) {
 
-        if(nums == null || nums.length <= 1) {
+        if (nums == null || nums.length <= 1) {
             return new int[2];
         }
         int[] result = new int[2];
         for (int i = 0; i < nums.length - 1; i++) {
-            for(int j = i + 1; j < nums.length; j++) {
-                if(nums[i] + nums[j] == target) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] + nums[j] == target) {
                     result[0] = i;
                     result[1] = j;
                     return result;
@@ -46,20 +46,20 @@ public class TwoSum {
     }
 
     public int[] twoSumWithMapStorage(int[] nums, int target) {
-        if(nums == null || nums.length <= 1) {
+        if (nums == null || nums.length <= 1) {
             return new int[2];
         }
 
         Map<Integer, Integer> data = new HashMap<>();
-        for(int i = 0; i < nums.length; i++) {
+        for (int i = 0; i < nums.length; i++) {
             data.put(nums[i], i);
         }
 
-        for(int i = 0; i < nums.length; i++) {
+        for (int i = 0; i < nums.length; i++) {
             int subtractValue = target - nums[i];
             // If the subtract value exists and is not self then return
-            if(data.containsKey(subtractValue) && data.get(subtractValue) != i) {
-                return new int[] {i, data.get(subtractValue)};
+            if (data.containsKey(subtractValue) && data.get(subtractValue) != i) {
+                return new int[]{i, data.get(subtractValue)};
             }
         }
 
