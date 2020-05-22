@@ -1,11 +1,12 @@
 package cs.fundamental.datastructures;
 
 import cs.fundamental.node.TreeNode;
+import lombok.Getter;
 
 import java.util.LinkedList;
 import java.util.List;
 
-
+@Getter
 public class BinaryTree {
 
     private TreeNode root;
