@@ -1,4 +1,8 @@
-datastructures.iml
-
 .idea/
+.settings/
+.vscode/
 target/
+.classpath
+.factorypath
+.project
+datastructures.iml
