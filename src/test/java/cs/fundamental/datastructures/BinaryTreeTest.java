@@ -84,4 +84,27 @@ class BinaryTreeTest {
         List<Integer> result = binaryTree.postOrderTraversal();
         assertArrayEquals(expected, result.toArray());
     }
+
+    @Test
+    void levelOrder() {
+
+        BinaryTree tree = new BinaryTree();
+        tree.add(50);
+        tree.add(60);
+        tree.add(40);
+        tree.add(20);
+        tree.add(30);
+        tree.add(15);
+        tree.add(55);
+        tree.add(65);
+        tree.add(54);
+        tree.add(56);
+        tree.add(64);
+        tree.add(70);
+        tree.add(63);
+
+        Integer[] expected = {50, 40, 60, 20, 55, 65, 15, 30, 54, 56, 64, 70, 63};
+        List<Integer> result = tree.levelOrder();
+        assertArrayEquals(expected, result.toArray());
+    }
 }

@@ -2,6 +2,9 @@ package cs.fundamental.problems.leetcode.tree;
 
 import cs.fundamental.node.TreeNode;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class BinaryTreeProblems {
 
     /**
@@ -28,7 +31,11 @@ public class BinaryTreeProblems {
                 && checkIfSameTree(root1.getRightChild(), root2.getRightChild());
     }
 
-
+    /**
+     * Get maximum height of the tree
+     * @param root - Root node to start
+     * @return int value of the height
+     */
     public int treeHeight(TreeNode root) {
         // If node is null break point return 0
         if(root == null) {
@@ -41,5 +48,66 @@ public class BinaryTreeProblems {
 
         // Add current node + Max of left or right child
         return 1 + Math.max(leftHeight, rightHeight);
+    }
+
+    public List<Integer> rootToLeafSum(TreeNode root, int sum) {
+        List<Integer> nodes = new LinkedList<>();
+        boolean result = rootToLeafSum(root, sum, nodes);
+        if(!result) {
+            return null;
+        }
+        return nodes;
+    }
+
+    private boolean rootToLeafSum(TreeNode root, int sum, List<Integer> nodes){
+
+        if(root == null) {
+            return false;
+        }
+
+        if(root.getLeftChild() == null
+                        && root.getRightChild() == null) {
+            if(root.getData() == sum) {
+                nodes.add(root.getData());
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        if(rootToLeafSum(root.getLeftChild(), sum - root.getData(), nodes)) {
+            nodes.add(root.getData());
+            return true;
+        }
+
+        if(rootToLeafSum(root.getRightChild(), sum - root.getData(), nodes)) {
+            nodes.add(root.getData());
+            return true;
+        }
+
+        return false;
+    }
+
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode node1, TreeNode node2) {
+        if(root == null) {
+            return null;
+        }
+
+        if(root == node1 || root == node2) {
+            return root;
+        }
+
+        TreeNode left = lowestCommonAncestor(root.getLeftChild(), node1, node2);
+        TreeNode right = lowestCommonAncestor(root.getRightChild(), node1, node2);
+
+        if(left != null && right != null) {
+            return root;
+        }
+
+        if(left == null && right == null) {
+            return null;
+        }
+
+        return (left == null) ? right : left;
     }
 }
