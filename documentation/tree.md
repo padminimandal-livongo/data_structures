@@ -1,4 +1,5 @@
 **[Go Home](../readme.md)**
+
 # Trees            
 
 A Tree is a Data structure which has its value and 2 pointers. 

@@ -1,5 +1,3 @@
-
-
 # Interview
 
   Clone the project and run `mvn clean install` Code will compile and run all the tests. 
