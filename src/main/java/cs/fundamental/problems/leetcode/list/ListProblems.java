@@ -21,7 +21,7 @@ public class ListProblems {
         Node secondList = new Node(-1);
         Node newHead = secondList;
         // Creation of the new list of nodes
-        while(current != null) {
+        while (current != null) {
             newHead.next = new Node(current.val);
             newHead.random = current.random;
             current = current.next;
@@ -30,7 +30,7 @@ public class ListProblems {
 
         current = head; // Resetting the current Node to restart the
         Node newListItr = secondList.next;
-        while(current != null) {
+        while (current != null) {
             current.next = newListItr.next;
             current = current.next;
             newListItr = newListItr.next;
@@ -38,7 +38,7 @@ public class ListProblems {
 
         current = head; // Resetting the current Node to restart the
         newListItr = secondList.next;
-        while(current.next != null) {
+        while (current.next != null) {
             newListItr.random = current.random.next;
             current = current.next;
             newListItr = newListItr.next;

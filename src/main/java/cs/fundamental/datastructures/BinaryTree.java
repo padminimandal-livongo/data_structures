@@ -69,7 +69,7 @@ public class BinaryTree {
 
     public List<Integer> levelOrder() {
         List<Integer> levelOrder = new LinkedList<>();
-        if(root == null) {
+        if (root == null) {
             return null;
         }
 
@@ -77,13 +77,13 @@ public class BinaryTree {
 
         queue.offer(root);
 
-        while(!queue.isEmpty()) {
+        while (!queue.isEmpty()) {
             TreeNode node = queue.poll();
             levelOrder.add(node.getData());
-            if(node.getLeftChild() != null) {
+            if (node.getLeftChild() != null) {
                 queue.offer(node.getLeftChild());
             }
-            if(node.getRightChild() != null) {
+            if (node.getRightChild() != null) {
                 queue.offer(node.getRightChild());
             }
         }
