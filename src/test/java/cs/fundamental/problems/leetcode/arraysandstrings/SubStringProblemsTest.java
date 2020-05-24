@@ -34,38 +34,38 @@ class SubStringProblemsTest {
 
     @ParameterizedTest
     @ValueSource(strings = {"pwwkew:3", "abcabcbb:3", "bbbbbb:1", ":0"})
-    void longestSubstringWithoutRepeatingCharacters(String data) {
+    void lengthOfLongestSubstringBruteForce(String data) {
         String[] testData = data.split(":");
         SubStringProblems subStringProblems = new SubStringProblems();
-        int result = subStringProblems.longestSubstringWithoutRepeatingCharactersBruteForce(testData[0]);
+        int result = subStringProblems.lengthOfLongestSubstringBruteForce(testData[0]);
         int expected = Integer.valueOf(testData[1]);
         assertEquals(expected, result);
     }
 
 
     @Test
-    void longestSubstringWithoutRepeatingCharactersForNull() {
+    void lengthOfLongestSubstringBruteForceForNull() {
         SubStringProblems subStringProblems = new SubStringProblems();
-        int result = subStringProblems.longestSubstringWithoutRepeatingCharactersBruteForce(null);
+        int result = subStringProblems.lengthOfLongestSubstringBruteForce(null);
         int expected = 0;
         assertEquals(expected, result);
     }
 
     @ParameterizedTest
     @ValueSource(strings = {"pwwkew:3", "abcabcbb:3", "bbbbbb:1", ":0"})
-    void longestSubstringWithoutRepeatingCharactersOptimize1(String data) {
+    void lengthOfLongestSubstringNaive(String data) {
         String[] testData = data.split(":");
         SubStringProblems subStringProblems = new SubStringProblems();
-        int result = subStringProblems.longestSubstringWithoutRepeatingCharactersOptimize1(testData[0]);
+        int result = subStringProblems.lengthOfLongestSubstringNaive(testData[0]);
         int expected = Integer.valueOf(testData[1]);
         assertEquals(expected, result);
     }
 
 
     @Test
-    void longestSubstringWithoutRepeatingCharactersOptimize1ForNull() {
+    void lengthOfLongestSubstringNaiveForNull() {
         SubStringProblems subStringProblems = new SubStringProblems();
-        int result = subStringProblems.longestSubstringWithoutRepeatingCharactersOptimize1(null);
+        int result = subStringProblems.lengthOfLongestSubstringNaive(null);
         int expected = 0;
         assertEquals(expected, result);
     }

@@ -12,7 +12,7 @@ public class SubStringProblems {
      * @param s - String to perform operation
      * @return count of non repeating substring
      */
-    public int longestSubstringWithoutRepeatingCharactersBruteForce(String s) {
+    public int lengthOfLongestSubstringBruteForce(String s) {
 
         if (s == null || s.length() == 0) {
             return 0;
@@ -55,7 +55,7 @@ public class SubStringProblems {
      * @param s - String to operate and find non repeating unique substring
      * @return count of Max non repeating substring
      */
-    public int longestSubstringWithoutRepeatingCharactersOptimize1(String s) {
+    public int lengthOfLongestSubstringNaive(String s) {
         if (s == null || s.length() == 0) {
             return 0;
         }
