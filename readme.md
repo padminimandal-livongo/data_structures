@@ -1,6 +1,6 @@
 
 
-#Interview
+# Interview
 
   Clone the project and run `mvn clean install` Code will compile and run all the tests. 
   
@@ -13,6 +13,7 @@
 ### 3. Stacks
 ### 4. Queues
 ### 5. Binary Tree and Binary Search Tree
+[Click Here](./documentation/tree.md)
 ### 6. Heaps
 ### 7. Graphs 
 ### 8. Matrix
