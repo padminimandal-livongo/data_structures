@@ -9,30 +9,8 @@ public class SubStringProblems {
 
     /**
      * Possible Iterations is O(N)
-     * 0	: p     - count 1
-     * 1	: pw    - count 2
-     * 2	: pww   - Repeat
-     * 3	: pwwk   - Repeat
-     * 4	: pwwke   - Repeat
-     * 5	: pwwkew   - Repeat
-     * 6	: w    - count 1
-     * 7	: ww   - Repeat
-     * 8	: wwk   - Repeat
-     * 9	: wwke   - Repeat
-     * 10	 : wwkew   - Repeat
-     * 11	 : w    - count 1
-     * 12	 : wk    - count 2
-     * 13	 : wke    - count 3
-     * 14	 : wkew   - Repeat
-     * 15	 : k    - count 1
-     * 16	 : ke    - count 2
-     * 17	 : kew    - count 3
-     * 18	 : e    - count 1
-     * 19	 : ew    - count 2
-     * 20	 : w    - count 1
-     *
-     * @param s
-     * @return
+     * @param s - String to perform operation
+     * @return count of non repeating substring
      */
     public int longestSubstringWithoutRepeatingCharactersBruteForce(String s) {
 
