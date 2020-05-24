@@ -9,4 +9,11 @@ public class ListNode {
         value = x;
     }
 
+    @Override
+    public String toString() {
+        return "ListNode{" +
+                "value=" + value +
+                ", next=" + next +
+                '}';
+    }
 }

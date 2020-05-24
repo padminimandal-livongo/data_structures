@@ -1,11 +1,13 @@
 package cs.fundamental.datastructures;
 
 import cs.fundamental.node.TreeNode;
+import lombok.Getter;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
-
+@Getter
 public class BinaryTree {
 
     private TreeNode root;
@@ -63,5 +65,29 @@ public class BinaryTree {
         postOrder(node.getLeftChild(), traversalList);
         postOrder(node.getRightChild(), traversalList);
         traversalList.add(node.getData());
+    }
+
+    public List<Integer> levelOrder() {
+        List<Integer> levelOrder = new LinkedList<>();
+        if(root == null) {
+            return null;
+        }
+
+        Queue<TreeNode> queue = new LinkedList<>();
+
+        queue.offer(root);
+
+        while(!queue.isEmpty()) {
+            TreeNode node = queue.poll();
+            levelOrder.add(node.getData());
+            if(node.getLeftChild() != null) {
+                queue.offer(node.getLeftChild());
+            }
+            if(node.getRightChild() != null) {
+                queue.offer(node.getRightChild());
+            }
+        }
+
+        return levelOrder;
     }
 }
