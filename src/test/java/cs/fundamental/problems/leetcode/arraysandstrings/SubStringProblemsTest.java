@@ -88,4 +88,8 @@ class SubStringProblemsTest {
         int expected = 0;
         assertEquals(expected, result);
     }
+
+    @Test
+    void convertStringToInteger() {
+    }
 }

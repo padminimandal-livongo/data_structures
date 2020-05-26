@@ -1,9 +1,6 @@
 package cs.fundamental.problems.leetcode.arraysandstrings;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class SubStringProblems {
 
@@ -97,5 +94,60 @@ public class SubStringProblems {
             map.put(s.charAt(rightPointer), rightPointer + 1);
         }
         return max;
+    }
+
+    public int convertStringToInteger(String data) {
+        if(data == null || data.trim().length() == 0) {
+            return 0;
+        }
+
+        char[] nums = data.trim().toCharArray();
+
+        int i = 0;
+        boolean isSigned = false;
+        if(nums[0] == '+' || nums[0] == '-') {
+            isSigned = true;
+            i = 1;
+        }
+
+        int start = i;
+        int end = 0;
+        for(i = i; i < nums.length; i++) {
+
+            switch(nums[i]) {
+                case '0':
+                case '1':
+                case '2':
+                case '3':
+                case '4':
+                case '5':
+                case '6':
+                case '7':
+                case '8':
+                case '9':
+                    end = i;
+                    break;
+                default: {
+                    // If character is not digit return 0
+                    if(i == 0 || i == 1) {
+                        return 0;
+                    } else {
+                        break;
+                    }
+                }
+            }
+        }
+
+        String result = data.substring(start, end);
+
+        int units = 1;
+        int sum = 0;
+        for(int j = result.length() - 1; j >= 0; j--) {
+            sum = sum + ( (int) result.charAt(j) * units) ;
+            units = units * 10;
+        }
+
+        return sum;
+
     }
 }
