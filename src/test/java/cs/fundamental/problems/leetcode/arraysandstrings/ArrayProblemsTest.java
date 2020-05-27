@@ -60,4 +60,40 @@ class ArrayProblemsTest {
         int expectedResult = Integer.valueOf(expected).intValue();
         assertEquals(expectedResult, result);
     }
+
+    @ParameterizedTest
+    @CsvSource(value = {"0,1,0,2,1,0,1,3,2,1,2,1|6"
+            , "1,2,2,3,3,1,4,2,0,0|2"
+            , "0,1,0,1|1"}, delimiter = '|')
+    void trapMaxRainWaterBruteForce(String inputDataStrings, String expected) {
+        ArrayProblems subject = new ArrayProblems();
+
+        // Given
+        int[] input = TestUtil.getIntArray(inputDataStrings);
+
+        // When
+        int result = subject.trapMaxRainWaterBruteForce(input);
+
+        // Then
+        int expectedResult = Integer.valueOf(expected).intValue();
+        assertEquals(expectedResult, result);
+    }
+
+    @ParameterizedTest
+    @CsvSource(value = {"0,1,0,2,1,0,1,3,2,1,2,1|6"
+            , "1,2,2,3,3,1,4,2,0,0|2"
+            , "0,1,0,1|1"}, delimiter = '|')
+    void trapMaxRainWaterOptPointerMethod(String inputDataStrings, String expected) {
+        ArrayProblems subject = new ArrayProblems();
+
+        // Given
+        int[] input = TestUtil.getIntArray(inputDataStrings);
+
+        // When
+        int result = subject.trapMaxRainWaterOptPointerMethod(input);
+
+        // Then
+        int expectedResult = Integer.valueOf(expected).intValue();
+        assertEquals(expectedResult, result);
+    }
 }
