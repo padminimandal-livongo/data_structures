@@ -7,6 +7,7 @@
   Refer to Lucid Chart to comment on the flows  
 
  ## Data Structures
+ 
    
 ### 1. Arrays
 [Click Here](./documentation/arrayProblems.md)
