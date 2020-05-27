@@ -1,15 +1,19 @@
 package cs.fundamental.problems.leetcode.arraysandstrings;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
-public class SubStringProblems {
+public class LongestSubstringWithoutRepeatingCharacters {
 
     /**
      * Possible Iterations is O(N)
+     *
      * @param s - String to perform operation
      * @return count of non repeating substring
      */
-    public int lengthOfLongestSubstringBruteForce(String s) {
+    public int bruteForce(String s) {
 
         if (s == null || s.length() == 0) {
             return 0;
@@ -52,7 +56,7 @@ public class SubStringProblems {
      * @param s - String to operate and find non repeating unique substring
      * @return count of Max non repeating substring
      */
-    public int lengthOfLongestSubstringNaive(String s) {
+    public int naiveMethod(String s) {
         if (s == null || s.length() == 0) {
             return 0;
         }
@@ -78,7 +82,7 @@ public class SubStringProblems {
      * @param s - String to check
      * @return length of the string that does not repeat in the string
      */
-    public int lengthOfLongestSubstring(String s) {
+    public int pointerMethod(String s) {
         if (s == null || s.length() == 0) {
             return 0;
         }

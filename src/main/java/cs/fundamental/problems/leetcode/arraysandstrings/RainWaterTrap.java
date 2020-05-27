@@ -1,75 +1,24 @@
 package cs.fundamental.problems.leetcode.arraysandstrings;
 
 /**
- * A] https://leetcode.com/explore/interview/card/amazon/76/array-and-strings/2963/
- * 1. Max Area between 2 vertical lines - maxAreaBetweenTwoVerticalLinesBruteForce()
- * 2. Max Area between 2 vertical lines - maxAreaBetweenTwoVerticalLinesWithPointers()
- *
- * B] https://leetcode.com/problems/trapping-rain-water/
+ * https://leetcode.com/problems/trapping-rain-water/
  * 1. Max rain water trap = trapMaxRainWaterBruteForce()
  * 2. Max rain water trap = trapMaxRainWaterOptPointerMethod()
  */
-public class ArrayProblems {
-
-    /**
-     * Area between 2 vertical lines
-     * https://leetcode.com/explore/interview/card/amazon/76/array-and-strings/2963/
-     * @param data - Height of the vertical lines
-     * @return max area between 2 vertical lines
-     */
-    public int maxAreaBetweenTwoVerticalLinesBruteForce(int[] data) {
-
-        if (data == null || data.length == 0) {
-            return 0;
-        }
-
-        int maxArea = 0;
-
-        for(int i = 0; i < data.length; i++) {
-            for(int j = i + 1; j < data.length; j++) {
-                int area = Math.min(data[i] , data[j]) * (j - i);
-                maxArea = Math.max(maxArea,  area);
-            }
-        }
-        return maxArea;
-    }
-
-    /**
-     * Optimized solution for Area between 2 vertical lines
-     * https://leetcode.com/explore/interview/card/amazon/76/array-and-strings/2963/
-     * @param data - Height of the vertical lines
-     * @return max area between 2 vertical lines
-     */
-    public int maxAreaBetweenTwoVerticalLinesWithPointers(int[] data) {
-        int maxArea = 0;
-        int left = 0;
-        int right = data.length - 1;
-
-        while(left < right) {
-            int area = Math.min(data[left], data[right]) * (right - left);
-            maxArea = Math.max(maxArea, area);
-
-            if(data[left] > data[right]) {
-                right --;
-            } else {
-                left ++;
-            }
-        }
-
-        return maxArea;
-    }
+public class RainWaterTrap {
 
     /**
      * https://leetcode.com/problems/trapping-rain-water/
      * Trapping Rain Water
      * Given n non-negative integers representing an elevation map where the width of each bar is 1,
      * compute how much water it is able to trap after raining.
+     *
      * @param height - Elevation of the ground
      * @return maximum rain water
      */
-    public int trapMaxRainWaterBruteForce(int[] height) {
+    public int bruteForce(int[] height) {
         // Null check
-        if(height == null || height.length == 0) {
+        if (height == null || height.length == 0) {
             return 0;
         }
 
@@ -106,11 +55,12 @@ public class ArrayProblems {
      * Trapping Rain Water
      * Given n non-negative integers representing an elevation map where the width of each bar is 1,
      * compute how much water it is able to trap after raining.
+     *
      * @param height - Elevation of the ground
      * @return maximum rain water
      */
-    public int trapMaxRainWaterOptPointerMethod(int[] height) {
-        if(height == null || height.length == 0) {
+    public int pointerMethod(int[] height) {
+        if (height == null || height.length == 0) {
             return 0;
         }
 
@@ -122,12 +72,12 @@ public class ArrayProblems {
         int leftMax = 0;
         int rightMax = 0;
 
-        while(left < right) {
+        while (left < right) {
 
             leftMax = Math.max(leftMax, height[left]);
             rightMax = Math.max(rightMax, height[right]);
 
-            if(leftMax < rightMax) {
+            if (leftMax < rightMax) {
                 volume = volume + Math.max(0, (leftMax - height[left++]));
             } else {
                 volume = volume + Math.max(0, (rightMax - height[right--]));
