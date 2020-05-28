@@ -29,7 +29,7 @@ class KMPAlgorithmTest {
             , "abc|dd|-1"
             , "|d|0"
             , "hgn||0"
-            , "ff|fff|0"
+            , "ff|fff|-1"
             , "||0"}, delimiter = '|')
     void containsPattern(String inputData, String pattern, int expected) {
         KMPAlgorithm subject = new KMPAlgorithm();

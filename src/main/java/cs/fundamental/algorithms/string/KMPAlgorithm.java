@@ -22,14 +22,17 @@ public class KMPAlgorithm {
         }
 
         if (text.trim().length() < patternText.trim().length()) {
-            return 0;
+            return -1;
         }
 
-        int[] patternIndex = prepPattern(patternText);
         char[] data = text.toCharArray();
         char[] pattern = patternText.toCharArray();
+
         int i = 0;
         int j = 0;
+
+        int[] patternIndex = prepPattern(patternText);
+
         while (i < data.length && j < pattern.length) {
             if (data[i] == pattern[j]) {
                 i++;
@@ -44,7 +47,7 @@ public class KMPAlgorithm {
             }
         }
 
-        if (j == patternIndex.length) {
+        if (j == pattern.length) {
             return i - j;
         } else {
             return -1;
@@ -55,36 +58,36 @@ public class KMPAlgorithm {
      * Based on pattern generate a int array to guide the search.
      * https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm
      *
-     * @param pattern - Text to search in another string
+     * @param patternText - Text to search in another string
      * @return int[] with search index
      */
-    public int[] prepPattern(@NonNull String pattern) {
-
-        char[] patternChar = pattern.toCharArray();
-        int[] preppedPattern = new int[patternChar.length];
+    public int[] prepPattern(@NonNull String patternText) {
+        char[] pattern = patternText.toCharArray();
+        int[] patterIndex = new int[pattern.length];
 
         // Left is starting index from left
         // right is the index which does not reset during the course
         int left = 0;
-        for (int right = 1; right < patternChar.length; ) {
+        for (int right = 1; right < pattern.length; ) {
             // If chars are same
-            if (patternChar[left] == patternChar[right]) {
-                preppedPattern[right] = left + 1;
-                right++;
+            if (pattern[left] == pattern[right]) {
+                patterIndex[right] = left + 1;
                 left++;
+                right++;
             } else {
-                // If char are not same and left index != 0
-                if (left != 0) {
-                    left = preppedPattern[left - 1];
-                    // No right increment
-                } else {
-                    preppedPattern[left] = 0;
+                if (left == 0) {
+                    // Left is already 0 then set the index to 0[Start from beginning]
+                    patterIndex[right] = 0;
                     right++;
+                } else {
+                    // If char are not same and left index != 0
+                    // Left to be reset to index created in the array
+                    left = patterIndex[left - 1];
+                    // No right imcrement
                 }
             }
         }
-
-        return preppedPattern;
+        return patterIndex;
     }
 
 }
