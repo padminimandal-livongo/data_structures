@@ -1,42 +1,32 @@
 package cs.fundamental.problems.leetcode.list;
 
-import cs.fundamental.datastructures.SinglyLinkedListDemo;
 import cs.fundamental.node.SinglyLinkedListNode;
+import cs.fundamental.util.TestUtil;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 class MergeTwoSortedListTest {
 
-    @Test
-    void mergeTwoLists() {
+    @ParameterizedTest
+    @CsvSource(value = {"1,2,4|1,2,4|1,1,2,2,4,4"
+            , "|4,3,2|4,3,2"
+            , "5,4,3||5,4,3"
+            , "1,3,5,7|2,4,6,8|1,2,3,4,5,6,7,8"}, delimiter = '|')
+    void mergeTwoLists(String list1Text, String list2Text, String expectedListText) {
 
-        SinglyLinkedListDemo<Integer> list1 = new SinglyLinkedListDemo<>();
-        list1.addNode(4);
-        list1.addNode(2);
-        list1.addNode(1);
+        SinglyLinkedListNode<Integer> list1 = TestUtil.getList(list1Text);
+        SinglyLinkedListNode<Integer> list2 = TestUtil.getList(list2Text);
 
-        SinglyLinkedListDemo<Integer> list2 = new SinglyLinkedListDemo<>();
-        list2.addNode(4);
-        list2.addNode(2);
-        list2.addNode(1);
+        MergeTwoSortedList subject = new MergeTwoSortedList();
 
-        MergeTwoSortedList mergeTwoSortedList = new MergeTwoSortedList();
+        SinglyLinkedListNode<Integer> result = subject.mergeTwoLists(list1, list2);
 
-        SinglyLinkedListNode<Integer> result = mergeTwoSortedList.mergeTwoLists(list1.getRoot(), list2.getRoot());
+        SinglyLinkedListNode<Integer> expected = TestUtil.getList(expectedListText);
 
-        SinglyLinkedListDemo<Integer> expected = new SinglyLinkedListDemo<>();
-        list2.addNode(4);
-        list2.addNode(4);
-        list2.addNode(2);
-        list2.addNode(2);
-        list2.addNode(1);
-        list2.addNode(1);
-
-        SinglyLinkedListNode<Integer> expectedNode = expected.getRoot();
-        while (expectedNode != null) {
-            Assertions.assertEquals(expectedNode.getValue(), result.getValue());
-
-            expectedNode = expectedNode.getNextNode();
+        while (expected != null) {
+            Assertions.assertEquals(expected.getValue(), result.getValue());
+            expected = expected.getNextNode();
             result = result.getNextNode();
         }
     }
