@@ -23,6 +23,9 @@ class KMPAlgorithmTest {
 
     @ParameterizedTest
     @CsvSource(value = {"abxabcabcaby|abcaby|6"
+            , "xyzjdfujrl|xyz|0"
+            , "xyzjdfujrl|jrl|7"
+            , "dkdiemmmolskfnc|mmm|5"
             , "abc|dd|-1"
             , "|d|0"
             , "hgn||0"
