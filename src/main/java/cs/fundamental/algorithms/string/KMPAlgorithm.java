@@ -1,6 +1,5 @@
 package cs.fundamental.algorithms.string;
 
-import lombok.Getter;
 import lombok.NonNull;
 
 /**
@@ -11,8 +10,6 @@ import lombok.NonNull;
  * to solve
  * https://leetcode.com/explore/interview/card/amazon/76/array-and-strings/2968/
  */
-@Getter
-
 public class KMPAlgorithm {
 
     public int containsPattern(String text, String patternText) {
