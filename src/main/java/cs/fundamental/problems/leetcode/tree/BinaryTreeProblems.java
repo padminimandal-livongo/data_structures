@@ -47,8 +47,8 @@ public class BinaryTreeProblems {
         }
 
         if(node1 != null && node2 != null && node1.value == node2.value) {
-            return (isSymmetric(node1.leftChild, node2.leftChild))
-                    && (isSymmetric(node1.rightChild, node2.rightChild));
+            return (isSymmetric(node1.leftChild, node2.rightChild))
+                    && (isSymmetric(node1.rightChild, node2.leftChild));
         }
 
         return false;
