@@ -8,7 +8,13 @@ import java.util.List;
 public class BinaryTreeProblems {
 
     /**
-     * Symmetric Tree (Mirror Image of itself) https://www.geeksforgeeks.org/symmetric-tree-tree-which-is-mirror-image-of-itself/
+     * Same Tree vs Symmetric Tree is different
+     Same Tree is compared to itself with value to value and left to left and right to right 
+     Where as in Symmetric 
+     value to value 
+     left to right 
+     right to left child is compared to check for mirror 
+     (Mirror Image of itself) https://www.geeksforgeeks.org/symmetric-tree-tree-which-is-mirror-image-of-itself/
      *
      * @param root1 - Tree 1 root node
      * @param root2 - Tree 2 root node
@@ -32,6 +38,22 @@ public class BinaryTreeProblems {
                 && checkIfSameTree(root1.getRightChild(), root2.getRightChild());
     }
 
+    /**
+    (Mirror Image of itself) https://www.geeksforgeeks.org/symmetric-tree-tree-which-is-mirror-image-of-itself/
+    */
+    public boolean isSymmetric(TreeNode node1, TreeNode node2) {
+        if(node1 == null && node2 == null) {
+            return true;
+        }
+
+        if(node1 != null && node2 != null && node1.value == node2.value) {
+            return (isSymmetric(node1.leftChild, node2.leftChild))
+                    && (isSymmetric(node1.rightChild, node2.rightChild));
+        }
+
+        return false;
+    }
+    
     /**
      * Get maximum height of the tree
      *
